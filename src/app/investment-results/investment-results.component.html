@@ -1,0 +1,33 @@
+
+@if (!results()){
+<p class="center">Por favor Introdusca algunos valores y 
+    pulse "calcular" si el usuario no lo ha hecho todavia</p>
+}@else {
+    <h2 class="center">Resultados de la inversion</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Año</th>
+                <th>Valor de la inversion</th>
+                <th>Interes por el año</th>
+                <th>Interes Total</th>
+                <th>Capital Invertido</th>
+            </tr>
+        </thead>
+        <tbody>
+           @for(result of results(); track result.year){
+            <tr>
+                <td>{{result.year}}</td>
+                <td>{{result.valueEndOfYear | currency:"MXN" }}</td>
+                <td>{{result.interest | currency:"MXN"}}</td>
+                <td>{{result.totalInterest | currency:"MXN"}}</td>
+                <td>{{result.totalAmountInvested | currency:"MXN"}}</td>
+                
+            </tr>
+
+           } 
+        </tbody>
+        
+        
+    </table>
+}
