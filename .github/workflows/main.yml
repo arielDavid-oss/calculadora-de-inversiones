@@ -39,7 +39,11 @@ jobs:
       - name: Deploy to peges
         uses: crazy-max/ghaction-github-pages@v4.0.0
         with:
+<<<<<<< HEAD
           build_dir: dist/essential-practice
+=======
+          build_dir: dist/essentials-practice
+>>>>>>> 0af7c294096483c351dc354a0c17facb2ae75302
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           
