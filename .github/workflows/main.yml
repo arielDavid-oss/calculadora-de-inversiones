@@ -24,8 +24,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
       
       - name: Setup nodejs
         uses: actions/setup-node@v4.0.3
@@ -39,7 +39,7 @@ jobs:
       - name: Deploy to peges
         uses: crazy-max/ghaction-github-pages@v4.0.0
         with:
-          build_dir: dist/
+          build_dir: dist/essential-practice
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           
